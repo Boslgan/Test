@@ -1,0 +1,47 @@
+﻿<Window x:Class="Лабиринт_времени.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Лабиринт_времени"
+        mc:Ignorable="d"
+        Title="Главное окно" Height="350" Width="500" Background="Silver">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Label Content="Добро пожаловать," FontSize="20"/>
+            <Label Content="{Binding UserName}" FontSize="20" FontWeight="Bold"/>
+        </StackPanel>
+        <DockPanel Grid.Row="1">
+            <Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="1" Margin="0,0,10,0">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Меню" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Button Content="Отчет" Grid.Row="1" Margin="0,0,0,10" x:Name="reportbtn" Click="reportbtn_Click"/>
+                    <Button Content="Окно учета времени" Grid.Row="2" Margin="0,0,0,10" x:Name="UchTimeBtn" Click="UchTimeBtn_Click"/>
+                </Grid>
+            </Border>
+            <Border DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="1" Margin="10">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Информация" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <Label Content="{Binding StartTime}" Grid.Row="1" Margin="0,0,0,10"/>
+                    <Label Content="{Binding WorkTime}" Grid.Row="2" Margin="0,0,0,10"/>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Window>
